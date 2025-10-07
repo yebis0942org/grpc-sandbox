@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package greet.v1;
+
+option go_package = "github.com/yebis0942/grpc-sandbox/gen/proto/greet/v1;greetv1";
+
+// GreetRequest message.
+message GreetRequest {
+  // The name to greet. This field is conceptually "required"
+  // and should be handled as such in the server logic.
+  string name = 1;
+
+  // An optional title to include in the greeting.
+  optional string title = 2;
+}
+
+// GreetResponse message.
+message GreetResponse {
+  string greeting = 1;
+}
+
+// GreetService defines the greeting service.
+service GreetService {
+  // Greet sends a greeting.
+  rpc Greet(GreetRequest) returns (GreetResponse) {}
+}
