@@ -1,0 +1,2 @@
+- `go run ./cmd/server/...`
+- `grpcurl -plaintext localhost:8085 describe greet.v1.GreetRequest`
